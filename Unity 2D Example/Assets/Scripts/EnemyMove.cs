@@ -18,13 +18,13 @@ public class EnemyMove : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider2D>();
 
 
-        Invoke("Think", 5);
+        Invoke("Think", 0.5f);
     }
 
     void FixedUpdate()
     {
         // Move
-        rigid.velocity = new Vector2(nextMove, rigid.velocity.y);
+        rigid.velocity = new Vector2(nextMove*5, rigid.velocity.y);
 
         // Platform Check
         Vector2 frontVec = new Vector2(rigid.position.x + nextMove*0.2f, rigid.position.y);
